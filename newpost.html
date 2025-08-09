@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Posts — Dashboard Style</title>
+
+    <!-- Fonts / Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="posts.css">
+
+
+</head>
+
+
+
+<body>
+
+    <div class="menu" id="nav-container">
+
+        <ul>
+            <li class="profile">
+                <div class="img_box">
+                    <img src="profile.webp" alt="profile">
+                </div>
+                <h2>yousef habib</h2>
+            </li>
+
+            <li>
+                <a href="newdashboard.html" class="active">
+                    <i class="fas fa-home"></i>
+                    <p>dashboard</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="newclient.html" class="cactive">
+                    <i class="fas fa-user-group"></i>
+                    <p>clients</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="newproducts.html" class="pactive">
+                    <i class="fas fa-table"></i>
+                    <p>products</p>
+                </a>
+            </li>
+            <li>
+                <a href="newpost.html" class="tactive">
+                    <i class="fas fa-pen"></i>
+                    <p>Posts</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="support.html" class="uactive">
+                    <i class="fas fa-info-circle"></i>
+                    <p>Support</p>
+                </a>
+            </li>
+
+
+            <li>
+                <a href="setting.html" class="sactive">
+                    <i class="fas fa-cog"></i>
+                    <p>settings</p>
+                </a>
+            </li>
+
+            <li class="log-out">
+                <a href="login.html">
+                    <i class="fas fa-sign-out"></i>
+                    <p>Log Out</p>
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="post-page" id="page">
+        <div class="title-post" role="banner">
+            <h1>Posts</h1>
+            <div class="controls" role="region" aria-label="controls">
+                <button id="openAdd" class="add-btn" aria-haspopup="dialog" aria-controls="postModal">Add Post</button>
+            </div>
+        </div>
+
+        <div id="status" class="muted" aria-live="polite">Loading posts...</div>
+
+        <main>
+            <section id="grid" class="posts-grid" aria-live="polite" aria-label="Posts list">
+                <!-- cards injected here -->
+            </section>
+        </main>
+    </div>
+
+    <!-- modal for add/edit -->
+    <div id="PopUp" class="pop-up" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="pop" role="document">
+            <h2 id="pop-Title">Add Post</h2>
+            <form id="postForm">
+                <div class="form-row">
+                    <label for="titleInput">Title</label>
+                    <input id="titleInput" name="title" type="text" placeholder="Title" required>
+                </div>
+                <div class="form-row">
+                    <label for="bodyInput">Body</label>
+                    <textarea id="bodyInput" name="body" placeholder="Write your post..." required></textarea>
+                </div>
+                <div class="form-row">
+                    <label for="imageInput">Image URL</label>
+                    <input id="imageInput" name="image" type="url" placeholder="Image URL (optional)">
+                </div>
+                <div class="post-control-add">
+                    <button type="button" id="cancelModal" class="cancel-btn">Cancel</button>
+                    <button type="submit" class="add-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="post.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
