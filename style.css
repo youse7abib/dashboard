@@ -1,0 +1,202 @@
+input {
+    background-color: #123;
+    flex-grow: 1;
+    outline: none;
+    border-radius: 15px;
+    border-color: gold;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    font-size: 12px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.inputs #title {
+    width: 95%;
+    height: 30px;
+}
+
+.price input {
+    width: 20%;
+    height: 30px;
+}
+
+.inputs #count,
+#category {
+    width: 95%;
+    height: 30px;
+
+}
+
+input:focus {
+    background-color: #000;
+    transform: scale(1.);
+}
+
+
+#total {
+    background-color: #a00d02;
+    padding: 5px 2px;
+    border-radius: 4px;
+}
+
+#total::before {
+    content: 'Total: ';
+}
+
+button {
+    width: 93%;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #310044;
+    color: white;
+    transition: 0.5s;
+}
+
+.inputs button {
+    width: 96.5%;
+
+}
+
+
+button:hover {
+    background-color: #51025f;
+    letter-spacing: 2px;
+}
+
+.btnSearch {
+    display: flex;
+    gap: 80px;
+
+}
+
+.btnSearch button {
+    width: 45%;
+}
+
+.searchBlock input {
+    margin: 5px 0;
+    width: 95%;
+    height: 30px;
+    margin-top: 10px;
+}
+
+#deleteAll {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+table th {
+    text-transform: lowercase;
+}
+
+th td {
+    padding: 5px;
+}
+
+/*-----clients---*/
+
+.client input {
+    background-color: #123;
+    flex-grow: 1;
+    outline: none;
+    border-radius: 15px;
+    border-color: gold;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    font-size: 12px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.inputs #name {
+    width: 95%;
+    height: 30px;
+}
+
+
+
+.inputs #email,
+#mobile {
+    width: 95%;
+    height: 30px;
+
+}
+
+input:focus {
+    background-color: #000;
+    transform: scale(1.);
+}
+
+
+button {
+    width: 93%;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #310044;
+    color: white;
+    transition: 0.5s;
+}
+
+.inputs button {
+    width: 96.5%;
+
+}
+
+
+button:hover {
+    background-color: #51025f;
+    letter-spacing: 2px;
+}
+
+.btnSearch {
+    display: flex;
+    gap: 80px;
+
+}
+
+.btnSearch button {
+    width: 45%;
+}
+
+.searchBlock input {
+    margin: 5px 0;
+    width: 95%;
+    height: 30px;
+    margin-top: 10px;
+}
+
+#deleteAllClient {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+table th {
+    text-transform: lowercase;
+}
+
+th td {
+    padding: 5px;
+}
+
+
+@media (min-width: 350px) and (max-width: 1100px) {
+
+    .content {
+        width: 95%;
+    }
+}
