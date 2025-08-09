@@ -124,8 +124,17 @@
         </div>
     </div>
 
+    <script>
+
+        if (localStorage.getItem("auth") !== "true") {
+            window.location.href = "login.html";
+        }
+    </script>
+
+
     <script src="post.js"></script>
     <script src="index.js"></script>
 </body>
+
 
 </html>
