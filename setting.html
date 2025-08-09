@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+</head>
+
+<style>
+    .menu ul li .sactive {
+        background-color: #ffffff55;
+    }
+</style>
+
+<body>
+    <div class="menu">
+
+        <ul>
+            <li class="profile">
+                <div class="img_box">
+                    <img src="profile.webp" alt="profile">
+                </div>
+                <h2>yousef habib</h2>
+            </li>
+
+            <li>
+                <a href="newdashboard.html" class="active">
+                    <i class="fas fa-home"></i>
+                    <p>dashboard</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="newclient.html" class="cactive">
+                    <i class="fas fa-user-group"></i>
+                    <p>clients</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="newproducts.html" class="pactive">
+                    <i class="fas fa-table"></i>
+                    <p>products</p>
+                </a>
+            </li>
+            <li>
+                <a href="newpost.html" class="tactive">
+                    <i class="fas fa-pen"></i>
+                    <p>Posts</p>
+                </a>
+            </li>
+            <li>
+                <a href="support.html" class="uactive">
+                    <i class="fas fa-info-circle"></i>
+                    <p>Support</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="setting.html" class="sactive">
+                    <i class="fas fa-cog"></i>
+                    <p>settings</p>
+                </a>
+            </li>
+
+            <li class="log-out">
+                <a href="login.html">
+                    <i class="fas fa-sign-out"></i>
+                    <p>Log Out</p>
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+    <div class="content">
+
+        <div class="settings-container">
+
+            <div class="header">
+                <h2>Profile Settings</h2>
+                <button id="toggle-theme"><i class="fa-brands fa-affiliatetheme"> </i>
+                    <p>Change Mode</p>
+                </button>
+            </div>
+            <div class="line"></div>
+            <div class="setting-group">
+                <div class="user-info">
+                    <p>Onwer :</p>
+                    <p>Yousef Habib</p>
+                </div>
+                <div class="user-info">
+                    <p>Email :</p>
+                    <p>yousef7abib2008@gmail.com</p>
+                </div>
+
+            </div>
+        </div>
+
+
+        <footer>
+            <h2> 2025 All rights reserved @ Yousef Habib</h2>
+        </footer>
+    </div>
+
+
+
+    <script>
+
+        if (localStorage.getItem("auth") !== "true") {
+            window.location.href = "login.html";
+        }
+    </script>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
