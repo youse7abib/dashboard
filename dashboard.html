@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+
+<style>
+    .menu ul li .active {
+        background-color: #ffffff55;
+    }
+</style>
+
+<body>
+    <div class="menu" id="nav-container">
+
+        <ul>
+            <li class="profile">
+                <div class="img_box">
+                    <img src="profile.webp" alt="profile">
+                </div>
+                <h2>yousef habib</h2>
+            </li>
+
+            <li>
+                <a href="dashboard.html" class="active">
+                    <i class="fas fa-home"></i>
+                    <p>dashboard</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="newclient.html" class="cactive">
+                    <i class="fas fa-user-group"></i>
+                    <p>clients</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="newproducts.html" class="pactive">
+                    <i class="fas fa-table"></i>
+                    <p>products</p>
+                </a>
+            </li>
+            <li>
+                <a href="posts.html" class="tactive">
+                    <i class="fas fa-pen"></i>
+                    <p>Posts</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="support.html" class="uactive">
+                    <i class="fas fa-info-circle"></i>
+                    <p>Support</p>
+                </a>
+            </li>
+
+
+            <li>
+                <a href="setting.html" class="sactive">
+                    <i class="fas fa-cog"></i>
+                    <p>settings</p>
+                </a>
+            </li>
+
+            <li class="log-out">
+                <a href="login.html">
+                    <i class="fas fa-sign-out"></i>
+                    <p>Log Out</p>
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div class="content">
+        <div class="title-info">
+            <p>Dashboard</p>
+            <i class="fas fa-chart-bar"></i>
+        </div>
+
+        <div class="data-info">
+            <div class="box">
+                <i class="fas fa-user"></i>
+                <div class="data">
+                    <p>Users</p>
+                    <span>+1000</span>
+                </div>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-pen"></i>
+                <div class="data">
+                    <p>Posts</p>
+                    <span>+65</span>
+                </div>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-table"></i>
+                <div class="data">
+                    <p>products</p>
+                    <span>+452</span>
+                </div>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-dollar"></i>
+                <div class="data">
+                    <p>revenue</p>
+                    <span>$5062</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="content">
+
+            <div class="title-info">
+                <p>Clients Name</p>
+                <i class="fas fa-user"></i>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>E-mail</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Yousef Habib</td>
+                        <td><span class="price">yousef7abib2008@gmail.com</span></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>Omar Hassan </td>
+                        <td><span class="price">omar.hassan@gmail.com</span></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>Sara Youssef</td>
+                        <td><span class="price">sara.youssef@gmail.com</span></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>Mahmoud Ali</td>
+                        <td><span class="price">mahmoud.ali@gmail.com</span></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>Yasmin Ahmed</td>
+                        <td><span class="price">yasmin.ahmed@gmail.com</span></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>Karim Tarek</td>
+                        <td><span class="price">karim.tarek@gmail.com</span></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>Aya Mostafa</td>
+                        <td><span class="price">aya.mostafa@gmail.com</span></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="content">
+
+            <div class="title-info">
+                <p>Product Manegment System</p>
+                <i class="fas fa-table"></i>
+            </div>
+
+
+            <div class="crud">
+
+
+                <div class="inputs">
+                    <input type="text" placeholder="Title" id="title">
+                    <div class="price">
+                        <input onkeyup="getTotal()" type="number" placeholder="price" id="price">
+                        <input onkeyup="getTotal()" type="number" placeholder="taxes" id="taxes">
+                        <input onkeyup="getTotal()" type="number" placeholder="ads" id="ads">
+                        <input onkeyup="getTotal()" type="number" placeholder="discount" id="discount">
+                        <small id="total"></small>
+                    </div>
+                    <input type="number" placeholder="count" id="count">
+                    <input type="text" placeholder="category" id="category">
+                    <button id="submit">Create</button>
+                </div>
+
+                <div class="outputs">
+                    <div class="searchBlock">
+
+                        <input type="text" onkeyup="searchData(this.value)" id="search" placeholder="search ">
+
+
+                        <div class="btnSearch">
+                            <button onclick="getSearchMode(this.id)" id="searchTitle">Search By Title</button>
+                            <button onclick="getSearchMode(this.id)" id="searchCategory">Search By Category</button>
+                        </div>
+                    </div>
+
+                    <div id="deleteAll">
+
+                    </div>
+                    <table>
+                        <tr>
+                            <th>id</th>
+                            <th>title</th>
+                            <th>price</th>
+                            <th>taxes</th>
+                            <th>ads</th>
+                            <th>discount</th>
+                            <th>total</th>
+                            <th>category</th>
+                            <th>update</th>
+                            <th>delete</th>
+
+                        </tr>
+
+                        <tbody id="tbody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+    <script>
+
+        if (localStorage.getItem("auth") !== "true") {
+            window.location.href = "login.html";
+        }
+    </script>
+    <script src="index.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
