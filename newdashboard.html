@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+
+<style>
+    .menu ul li .active {
+        background-color: #ffffff55;
+    }
+</style>
+
+<body>
+    <div class="menu" id="nav-container">
+
+        <ul>
+            <li class="profile">
+                <div class="img_box">
+                    <img src="profile.webp" alt="profile">
+                </div>
+                <h2>yousef habib</h2>
+            </li>
+
+            <li>
+                <a href="newdashboard.html" class="active">
+                    <i class="fas fa-home"></i>
+                    <p>dashboard</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="newclient.html" class="cactive">
+                    <i class="fas fa-user-group"></i>
+                    <p>clients</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="newproducts.html" class="pactive">
+                    <i class="fas fa-table"></i>
+                    <p>products</p>
+                </a>
+            </li>
+            <li>
+                <a href="newpost.html" class="tactive">
+                    <i class="fas fa-pen"></i>
+                    <p>Posts</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="support.html" class="uactive">
+                    <i class="fas fa-info-circle"></i>
+                    <p>Support</p>
+                </a>
+            </li>
+
+
+            <li>
+                <a href="setting.html" class="sactive">
+                    <i class="fas fa-cog"></i>
+                    <p>settings</p>
+                </a>
+            </li>
+
+            <li class="log-out">
+                <a href="login.html">
+                    <i class="fas fa-sign-out"></i>
+                    <p>Log Out</p>
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div class="content">
+        <div class="title-info">
+            <p>Dashboard</p>
+            <i class="fas fa-chart-bar"></i>
+        </div>
+
+        <div class="data-info">
+            <div class="box">
+                <i class="fas fa-user"></i>
+                <div class="data">
+                    <p>Users</p>
+                    <span>+1000</span>
+                </div>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-pen"></i>
+                <div class="data">
+                    <p>Posts</p>
+                    <span>+65</span>
+                </div>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-table"></i>
+                <div class="data">
+                    <p>products</p>
+                    <span>+452</span>
+                </div>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-dollar"></i>
+                <div class="data">
+                    <p>revenue</p>
+                    <span>$5062</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="content">
+
+            <div class="title-info">
+                <p>Clients Data</p>
+                <i class="fas fa-user"></i>
+            </div>
+
+
+            <div class="client">
+
+
+                <div class="outputs">
+
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>E-mail</th>
+                            <th>Mobile</th>
+
+
+                        </tr>
+
+                        <tbody id="tclientbody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="content">
+
+            <div class="title-info">
+                <p>Product Manegment System</p>
+                <i class="fas fa-table"></i>
+            </div>
+
+            <div class="crud">
+
+
+                <div class="outputs">
+
+
+
+                    <table>
+                        <tr>
+                            <th>id</th>
+                            <th>title</th>
+                            <th>price</th>
+                            <th>taxes</th>
+                            <th>ads</th>
+                            <th>discount</th>
+                            <th>total</th>
+                            <th>category</th>
+
+
+                        </tr>
+
+                        <tbody id="tbody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <script src="index.js"></script>
+    <script src="main.js"></script>
+    <script src="client.js"></script>
+    <script>
+
+        function showclientdata() {
+            let clientable = '';
+            for (let i = 0; i < dataClient.length; i++) {
+                clientable +=
+                    `
+            <tr>
+                <td>${dataClient[i].name}</td>
+                <td>${dataClient[i].number}</td>
+                <td>${dataClient[i].email}</td>
+                        </tr>
+            `
+                    ;
+            }
+
+            document.getElementById('tclientbody').innerHTML = clientable;
+
+        }
+        showclientdata();
+
+
+    </script>
+
+
+    <script>
+        function showData() {
+
+
+            let table = '';
+            for (let i = 0; i < dataPro.length; i++) {
+                table +=
+                    `
+            <tr>
+                <td>${i + 1}</td>
+                <td>${dataPro[i].title}</td>
+                <td>${dataPro[i].price}</td>
+                <td>${dataPro[i].taxes}</td>
+                <td>${dataPro[i].ads}</td>
+                <td>${dataPro[i].discount}</td>
+                <td>${dataPro[i].total}</td>
+                <td>${dataPro[i].category}</td>
+                          </tr>
+            `
+                    ;
+            }
+
+            document.getElementById('tbody').innerHTML = table;
+
+
+
+        }
+        showData()
+
+
+
+    </script>
+</body>
+
+</html>
