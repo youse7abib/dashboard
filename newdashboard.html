@@ -209,6 +209,14 @@
     <script src="index.js"></script>
     <script src="main.js"></script>
     <script src="client.js"></script>
+
+    <script>
+
+        if (localStorage.getItem("auth") !== "true") {
+            window.location.href = "login.html";
+        }
+    </script>
+    
     <script>
 
         function showclientdata() {
@@ -267,5 +275,6 @@
 
     </script>
 </body>
+
 
 </html>
