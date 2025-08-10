@@ -1,11 +1,3 @@
-/***********************
-        * Posts page JS
-        * - fetch posts from JSONPlaceholder (async/await + error handling)
-        * - picsum images for visuals
-        * - user posts saved to localStorage (add/edit/delete)
-        * - posts from API are read-only
-        * - event delegation for edit/delete
-        ***********************/
 
 (function () {
     // DOM
@@ -23,11 +15,11 @@
     let cancelModalBtn = document.getElementById('cancelModal');
 
     // state
-    let posts = []; // combined [apiPosts..., userPosts...]
+    let posts = []; 
     let userPostsKey = 'userPosts';
-    let editingIndex = null; // index in posts array
+    let editingIndex = null; 
 
-    // helper: fetch JSON with error handling
+    // helper: fetch JSON 
     async function fetchJSON(url) {
         let res = await fetch(url);
         if (!res.ok) throw new Error('Network response was not ok');
@@ -39,7 +31,7 @@
         try {
             status.textContent = 'Loading posts from API...';
             let apiData = await fetchJSON('https://jsonplaceholder.typicode.com/posts?_limit=' + limit);
-            // map to internal format and add picsum image
+            //  add picsum image
             let apiPosts = apiData.map((p, i) => ({
                 id: 'api-' + p.id,
                 title: p.title,
@@ -62,7 +54,7 @@
             let raw = localStorage.getItem(userPostsKey);
             if (!raw) return [];
             let arr = JSON.parse(raw);
-            // ensure format match
+          
             return arr.map(p => ({ ...p, fromAPI: false }));
         } catch (e) {
             console.error('Failed to parse userPosts', e);
@@ -75,7 +67,7 @@
         localStorage.setItem(userPostsKey, JSON.stringify(local));
     }
 
-    // render all posts (current posts state)
+
     function renderPosts() {
         grid.innerHTML = '';
 
@@ -128,7 +120,6 @@
             imageInput.value = p.image || '';
             titleInput.focus();
         }
-        // trap focus simple: focus on first input
     }
 
     function closeModal() {
@@ -151,11 +142,10 @@
         };
 
         if (editingIndex !== null) {
-            // find real index in posts array that matches current filtered render
-            // editingIndex here is index in posts array (we set it when opening modal)
+           
             posts[editingIndex] = newPost;
         } else {
-            // push to front so user posts appear after API posts (or we can push top)
+           
             posts.push(newPost);
         }
         saveUserPosts();
@@ -187,10 +177,10 @@
         }
     });
 
-    // safer: keyboard support for edit/delete via keydown (Enter when card focused)
+    //  keyboard 
     grid.addEventListener('keydown', function (e) {
         if (e.key === 'Enter') {
-            // try to click first action button inside focused card
+           
             let card = document.activeElement;
             if (card && card.classList.contains('card')) {
                 let btn = card.querySelector('.actions button');
@@ -223,5 +213,6 @@
 
     // initial call
     init();
+
 
 })();
